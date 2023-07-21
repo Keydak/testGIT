@@ -2,8 +2,8 @@
 aowkaowk
 
 #MCD CHAMBER
-<span style='color:red'>
-~~~~~~~~~~~~~~~~~~~~~~?&@&&BBPPPPPGBBBBB###BBB#BBGYJYPGBBBBB##BBBBBBBBB57~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+- ~~~~~~~~~~~~~~~~~~~~~~?&@&&BBPPPPPGBBBBB###BBB#BBGYJYPGBBBBB##BBBBBBBBB57~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ~~~~~~~~~~~~~~~~~~~~~~~5@&&&&&###GPPGBBBB###GBBBBBBG5YY5GGBBBBB#####BBBBBP?~~~~~~~~~~~~~~~~~~~~~~~~~
 ~~~~~~~~~~~~~~~~~~~~~~~!#&&&#&&&&&&BPPPPPGBBBGPGGGPGB#P7?YPPGGGGB###PBBBBBBP7~~~~~~~~~~~~~~~~~~~~~~~
 ~~~~~~~~~~~~~~~~~~~~~~~~Y@&####&&&&&&BP5555PGP55PG5JPB&577JY5PGBBB#GPPGGB##G7~~~~~~~~~~~~~~~~~~~~~~~
@@ -50,4 +50,4 @@ aowkaowk
 B##&&####BPPPPPPPPPPP5Y5PGB#######BB###BGPPPP55555P5PG5J??7.        ...:::^^^~~~~~~~~~~~~~~~~~~~~~~~
 ###########GPPPPPPPPPP55GGGBB#####BGB&###&&&##BBGGGPP5J??7.                    ....:::^^^~~~~~~~~~~~
 ############GPPPPPPPPPGGGGGGGBBBBB#BB####BBGGPP5555P5J??7.                                ...::^^~~~
-</span>
+```
