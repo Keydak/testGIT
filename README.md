@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-# mksdksdmksmdkmdkmsd
-=======
-# AKWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWw
->>>>>>> ASCI
