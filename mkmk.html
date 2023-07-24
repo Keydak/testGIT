@@ -18,11 +18,30 @@
 <body>
     
     kontel luwh (merge 2)
+    <p id="hasil" style="visibility: hidden;"></p>
+    <input type="text" id="inputtext">
+    <button  onclick="hasil()">hasil :</button>
 
     <div>
-       <p>awokawok</p>
+       <p>awokawok</p>  
     </div>
     <script>
+         body = document.body
+        function hasil(){
+        let x = document.getElementById("inputtext").value
+        let b = document.getElementById("hasil")
+        let k = b.style.visibility
+        document.getElementById("hasil").innerText = x
+
+        if (k == "visible") {
+            b.style.visibility = "hidden"
+            
+        }
+        else{
+            b.style.visibility = "visible"
+           
+        }
+    }
         alert("ha")
         while(true){
         let inpt = prompt("lu wibu bukan? (y/t)")
