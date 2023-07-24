@@ -8,29 +8,144 @@
     <title>Document</title>
 </head>
 <style>
-    .awpl{
-        position: absolute;
+    .awkd{
+        /* position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%); */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .cont{
+        height: 300px;
+        width: 300px;
+        position: relative;
+    }
+
+    .tmbl{
+        text-align: center;
     }
 </style>
 
-<body>
+
     
     kontel luwh (merge 2)
-
-    <div class="awpl">
-       <p>awokawok</p> 
-       kkkkkkkkkkkkkkkkkkkkk
-       <div class="card" style="width: 18rem;">
-        <img src="" class="card-img-top" alt="...">
+    <p id="hasil" style="visibility: hidden;"></p>
+    <input type="text" id="inputtext">
+    <button  onclick="hasil()">hasil :</button>
+    <div class="row" style="display: flex;">
+        <div class="col-sm-4 awkd">
+       <div class="card" style="width: 18rem; visibility: visible; border: solid;" id="jettclick"  >
+        <img src="mcd jett.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <p class="card-text">jett wangy wangy 🥵😱🥵🥵🥵🥵🥵🥵🥵🥵🥵.</p>
         </div>
-      </div> 
     </div>
+    <button onclick="jett()">klick</button>
+      </div> 
+      
+   
+
+    <div class="col-sm-4 awkd">
+        <div class="card" style="width: 18rem; visibility: visible; border: solid;" id="chamberclick"  >
+         <img src="chamber mcd.jpg" class="card-img-top" alt="...">
+         <div class="card-body">
+           <p class="card-text">nerf CHAMBER.</p>
+         </div>
+       </div> 
+       <button onclick="chamber()">klick</button>
+     </div>
+
+     <div class="col-sm-4 awkd">
+        <div class="card" style="width: 18rem; visibility: visible; border: solid;" id="jettclick"  >
+         <img src="mcd jett.jpg" class="card-img-top" alt="...">
+         <div class="card-body">
+           <p class="card-text">jett wangy wangy 🥵😱🥵🥵🥵🥵🥵🥵🥵🥵🥵.</p>
+         </div>
+       </div> 
+       <button onclick="jett()">klick</button>
+     </div>
+    </div>
+
+    
+    adawduiadiuaw
+<!-- 
+    <div class="card-group" style="" >
+        
+        <div class="card" id="jettclick" style="visibility: visible;">
+          <img src="mcd jett.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            
+          </div>
+          
+        </div>
+
+        <div class="card">
+          <img src="mcd jett.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="mcd jett.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+      </div>
+      <div><button onclick="jett()">klick</button></div>
+      <button onclick="jett()">klick</button>
+      <button onclick="jett()">klick</button> -->
     <script>
+
+        function jett(){
+            let j = document.getElementById("jettclick")
+            let m = j.style.visibility
+
+            if (m == "visible") {
+                j.style.visibility = "hidden"
+            } else {
+                j.style.visibility = "visible"
+            }
+        }
+
+        function chamber(){
+            let j = document.getElementById("chamberclick")
+            let m = j.style.visibility
+
+            if (m == "visible") {
+                j.style.visibility = "hidden"
+            } else {
+                j.style.visibility = "visible"
+            }
+        }
+         body = document.body
+        function hasil(){
+        let x = document.getElementById("inputtext").value
+        let b = document.getElementById("hasil")
+        let k = b.style.visibility
+        document.getElementById("hasil").innerText = x
+
+        if (k == "visible") {
+            b.style.visibility = "hidden"
+            
+        }
+        else{
+            b.style.visibility = "visible"
+           
+        }
+    }
         alert("ha")
         while(true){
         let inpt = prompt("lu wibu bukan? (y/t)")
