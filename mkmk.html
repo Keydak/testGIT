@@ -2,81 +2,122 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title>Document</title>
 </head>
 <style>
-    .awkd{
-        /* position: absolute;
+  table,th, td{
+    
+    border: 2px solid black;
+  }
+  table{
+    width: 80%;
+  }
+  .awkd {
+    /* position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%); */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        margin: auto;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+  }
 
-    .cont{
-        height: 300px;
-        width: 300px;
-        position: relative;
-    }
+  .cont {
+    height: 300px;
+    width: 300px;
+    position: relative;
+  }
 
-    .tmbl{
-        text-align: center;
-    }
+  .tmbl {
+    text-align: center;
+  }
 </style>
 
 
-    
-    kontel luwh (merge 2)
-    <p id="hasil" style="visibility: hidden;"></p>
-    <input type="text" id="inputtext">
-    <button  onclick="hasil()">hasil :</button>
-    <div class="row" style="display: flex;">
-        <div class="col-sm-4 awkd">
-       <div class="card" style="width: 18rem; visibility: visible; border: solid;" id="jettclick"  >
-        <img src="mcd jett.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <p class="card-text">jett wangy wangy 🥵😱🥵🥵🥵🥵🥵🥵🥵🥵🥵.</p>
-        </div>
+
+kontel luwh (merge 2)
+<p id="hasil" style="visibility: hidden;"></p>
+<input type="text" id="inputtext">
+<button onclick="hasil()">hasil :</button>
+
+
+
+<div class="row" style="display: flex;">
+  <div class="col-sm-4 awkd">
+    <div class="card" style="width: 18rem; visibility: visible; border: solid;" id="jettclick">
+      <img src="mcd jett.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <p class="card-text">jett wangy wangy 🥵😱🥵🥵🥵🥵🥵🥵🥵🥵🥵.</p>
+      </div>
     </div>
     <button onclick="jett()">klick</button>
-      </div> 
-      
-   
+  </div>
 
-    <div class="col-sm-4 awkd">
-        <div class="card" style="width: 18rem; visibility: visible; border: solid;" id="chamberclick"  >
-         <img src="chamber mcd.jpg" class="card-img-top" alt="...">
-         <div class="card-body">
-           <p class="card-text">nerf CHAMBER.</p>
-         </div>
-       </div> 
-       <button onclick="chamber()">klick</button>
-     </div>
 
-     <div class="col-sm-4 awkd">
-        <div class="card" style="width: 18rem; visibility: visible; border: solid;" id="jettclick"  >
-         <img src="mcd jett.jpg" class="card-img-top" alt="...">
-         <div class="card-body">
-           <p class="card-text">jett wangy wangy 🥵😱🥵🥵🥵🥵🥵🥵🥵🥵🥵.</p>
-         </div>
-       </div> 
-       <button onclick="jett()">klick</button>
-     </div>
+
+  <div class="col-sm-4 awkd">
+    <div class="card" style="width: 18rem; visibility: visible; border: solid;" id="chamberclick">
+      <img src="chamber mcd.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <p class="card-text">nerf CHAMBER.</p>
+      </div>
     </div>
+    <button onclick="chamber()">klick</button>
+  </div>
 
-    
-  <input type="text" name="" id="inputarray"> 
-  <button id="simpanarray" onclick="simpanarray()">simpan</button>
-  <button onclick="tampilarrayf()">tampilkan</button>
-  <br>
-  <p id="tampilarrp"></p>
+  <div class="col-sm-4 awkd">
+    <div class="card" style="width: 18rem; visibility: visible; border: solid;" id="jettclick">
+      <img src="mcd jett.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <p class="card-text">jett wangy wangy 🥵😱🥵🥵🥵🥵🥵🥵🥵🥵🥵.</p>
+      </div>
+    </div>
+    <button onclick="jett()">klick</button>
+  </div>
+</div>
+
+<br>
+<p id="panjangarray">panjang array :</p>
+<p>Nama : <input type="text" name="" id="inputarray"></p>
+ <p id="anjg">Data : </p>
+
+
+<button id="simpanarray" onclick="simpanarrayb()">simpan</button>
+
+<button onclick="tampilarrayf()">tampilkan</button>
+<button onclick="hapus()">clear tampilan</button>
+<button onclick="hapussemua()">Clear all</button>
+
+<p>data yang sudah di hapus (klick untuk melihat)</p>
+<button onclick="lihatdatahapus()">disini</button>
+
+<div id="tabelco" class="awkd">
+
+</div>
+<div class="awkd">
+<!-- <table border="2" style="width: 100%;" id="tabel">
+  <tr>
+    <th>
+      Data:
+    </th>
+    <th>
+      Panjang Array :
+    </th>
+  </tr>
+
+</table> -->
+
+</div>
+  <ul id="panjangdatahapus">Panjang Array yang sudah di hapus : </ul>
+  <ul id="datahapus">Data : </ul>
+
+
 <!-- 
     <div class="card-group" style="" >
         
@@ -111,82 +152,138 @@
       <div><button onclick="jett()">klick</button></div>
       <button onclick="jett()">klick</button>
       <button onclick="jett()">klick</button> -->
-    <script>
-        
-        let = simpanarray = () =>{
-            let k = []   
-            let x = document.getElementById("inptarray").value
-            document.getElementById("tampilarrp").innerHTML = x 
-        for (let g = 0; g < k; g++) { 
-        
-        let oawk = x[g]
-       
-       document.getElementById("tampilarrp").console.log(oawk)
+<script>
+  let k = [] //data array
+  let kk = [] //data cadangan / duplicate
+  let x = document.getElementById("inputarray")
+  let anjg = document.getElementById("anjg")
+  let panjangangka = document.getElementById("panjangarray")
+  let dthps = document.getElementById("datahapus")
+  let PDH = document.getElementById("panjangdatahapus")
+  let tblD = document.getElementById("tabeldata")
+  let tabelarray = document.getElementById("tabelarray")
+  let tabel = document.getElementById("tabel")
+  let outputDATA = ""
+  let tabelco = ""
+  let simpanarrayb = () => {
+    
+    if (x.value != "") {
+      k.push(x.value)
+      kk.push(x.value)
+      document.getElementById("panjangarray").innerHTML = "panjang array :" + k.length
+    celar()
+    console.log(`data atas  :` + k.length)
+    console.log(`data bawah :` + kk.length)
+  }
+ else {
+ 
     }
-        }
-        function tampilarrayf(){
-            let xg = document.getElementById("inptarray").value[g]
-            let b = document.getElementById("tampilarr")
-            document.getElementById("tampillarr").innerHTML = xg
-        }
+  }
 
-        function jett(){
-            let j = document.getElementById("jettclick")
-            let m = j.style.visibility
+  function celar() {
+    x.value = "";
+  }
 
-            if (m == "visible") {
-                j.style.visibility = "hidden"
-            } else {
-                j.style.visibility = "visible"
-            }
-        }
+  function tampilarrayf() {
+    document.getElementById("anjg").innerHTML = "Data : " + k.join(",")
+   
+  }
 
-        function chamber(){
-            let j = document.getElementById("chamberclick")
-            let m = j.style.visibility
+  function hapus() {
+    anjg.innerHTML = ""
+  }
 
-            if (m == "visible") {
-                j.style.visibility = "hidden"
-            } else {
-                j.style.visibility = "visible"
-            }
-        }
-         body = document.body
-        function hasil(){
-        let x = document.getElementById("inputtext").value
-        let b = document.getElementById("hasil")
-        let k = b.style.visibility
-        document.getElementById("hasil").innerText = x
+  function hapussemua(params) {
+    k.length = 0
+    anjg.innerHTML = ""
+    document.getElementById("panjangarray").innerHTML = "panjang array :" + k.length
+  }
 
-        if (k == "visible") {
-            b.style.visibility = "hidden"
-            
-        }
-        else{
-            b.style.visibility = "visible"
-           
-        }
+function lihatdatahapus(){
+  let rows = 2
+
+  // tabelco +="<table border=2>"
+  // tabelco += "<tr>"
+  // tabelco += "<th>" + "data" + "</th>"
+  // tabelco += "<th>" + "Panjang Array" + "</th>"
+  // tabelco += "</tr>" 
+for (let i = 0; i < kk.length; i++) {
+  tabelco += "<tr>"
+  tabelco += "<td>" + kk[i] + "</td>"
+  tabelco += "<td>" + kk.length + "</td>"
+
+  tabelco += "</tr>" 
+}
+// tabelco += "</table>"
+document.getElementById("tabelco").innerHTML = ("<table> <tr> <th> data </th> <th> Panjang Array </th> </tr> " +tabelco +" </table>")
+  dthps.innerHTML = "Data :" + kk.join(",")
+
+  PDH.innerHTML = "Panjang Array yang sudah di hapus : " + kk.length
+}
+
+
+
+
+
+
+  function jett() {
+    let j = document.getElementById("jettclick")
+    let m = j.style.visibility
+
+    if (m == "visible") {
+      j.style.visibility = "hidden"
+    } else {
+      j.style.visibility = "visible"
     }
-        alert("ha")
-        while(true){
-        let inpt = prompt("lu wibu bukan? (y/t)")
+  }
 
-        if (inpt == "y" || inpt == "Y") {
-            alert("suki lu")
-            break
-        }
+  function chamber() {
+    let j = document.getElementById("chamberclick")
+    let m = j.style.visibility
 
-        else if (inpt == "t" || inpt == "T") {
-            alert("mantap")
-            break
-        } 
-        
-        else
-        {
-            continue
-        }
-        }
-    </script>
+    if (m == "visible") {
+      j.style.visibility = "hidden"
+    } else {
+      j.style.visibility = "visible"
+    }
+  }
+  body = document.body
+
+  let arraytest = []
+  function hasil() {
+    let x = document.getElementById("inputtext").value
+    let b = document.getElementById("hasil")
+    let k = b.style.visibility
+    document.getElementById("hasil").innerText = x
+
+    if (k == "visible") {
+      b.style.visibility = "hidden"
+
+    }
+    else {
+      b.style.visibility = "visible"
+
+    }
+  }
+  alert("ha")
+  while (true) {
+    let inpt = prompt("lu wibu bukan? (y/t)")
+
+    if (inpt == "y" || inpt == "Y") {
+      alert("suki lu")
+      break
+    }
+
+    else if (inpt == "t" || inpt == "T") {
+      alert("mantap")
+      break
+    }
+
+    else {
+      continue
+    }
+  }
+</script>
 </body>
 
 </html>
