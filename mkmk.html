@@ -9,13 +9,20 @@
   <title>Document</title>
 </head>
 <style>
-  table,th, td{
-    
+  table,
+  th,
+  td {
     border: 2px solid black;
   }
-  table{
+  th{
+    text-align: center;
+  }
+
+  table {
+    margin: 5px 0px 5px 0px;
     width: 80%;
   }
+
   .awkd {
     /* position: absolute;
         top: 50%;
@@ -83,25 +90,31 @@ kontel luwh (merge 2)
 </div>
 
 <br>
+<div id="tampilsimpen" style="display: block;">
 <p id="panjangarray">panjang array :</p>
-<p>Nama : <input type="text" name="" id="inputarray"></p>
- <p id="anjg">Data : </p>
-
-
+<input type="hidden" id="updateindex">
+<p>Nama : <input type="text" name="" id="inputarray"></p> 
+<p>ID : <input type="text" name="" id="inputID" oninput="validasiangka()"></p>
 <button id="simpanarray" onclick="simpanarrayb()">simpan</button>
-
 <button onclick="tampilarrayf()">tampilkan</button>
-<button onclick="hapus()">clear tampilan</button>
 <button onclick="hapussemua()">Clear all</button>
+</div>
 
-<p>data yang sudah di hapus (klick untuk melihat)</p>
-<button onclick="lihatdatahapus()">disini</button>
-
+<div id="updatesection" style="display: none;">
+  <p id="panjangarray">panjang array :</p>
+  <input type="hidden" id="updateindex">
+  <p>Nama : <input type="text" name="" id="inputarray"></p> 
+  
+  <p>ID : <input type="text" name="" id="inputID" oninput="validasiangka()"></p>
+  <button id="simpanarray" onclick="simpanarrayb()">simpan</button>
+  <button onclick="tampilarrayf()">tampilkan</button>
+  <button onclick="hapussemua()">Clear all</button>
+</div>
 <div id="tabelco" class="awkd">
 
 </div>
-<div class="awkd">
-<!-- <table border="2" style="width: 100%;" id="tabel">
+<!-- <div class="awkd">
+  <!-- <table border="2" style="width: 100%;" id="tabel">
   <tr>
     <th>
       Data:
@@ -113,9 +126,7 @@ kontel luwh (merge 2)
 
 </table> -->
 
-</div>
-  <ul id="panjangdatahapus">Panjang Array yang sudah di hapus : </ul>
-  <ul id="datahapus">Data : </ul>
+<!-- </div>  -->
 
 
 <!-- 
@@ -154,76 +165,106 @@ kontel luwh (merge 2)
       <button onclick="jett()">klick</button> -->
 <script>
   let k = [] //data array
+  let mm = [] // ID
   let kk = [] //data cadangan / duplicate
-  let x = document.getElementById("inputarray")
+  let x = document.getElementById("inputarray").value
+  let pok = document.getElementById("inputID")
+  let kop = pok.value
   let anjg = document.getElementById("anjg")
   let panjangangka = document.getElementById("panjangarray")
-  let dthps = document.getElementById("datahapus")
-  let PDH = document.getElementById("panjangdatahapus")
   let tblD = document.getElementById("tabeldata")
   let tabelarray = document.getElementById("tabelarray")
   let tabel = document.getElementById("tabel")
-  let outputDATA = ""
+  let deletedata = document.getElementById("deletedata")
   let tabelco = ""
+  let updateindex = document.getElementById("updateindex")
+
   let simpanarrayb = () => {
+     updateindex.value
+     x.value
+     pok.value
     
     if (x.value != "") {
+      if (!isNaN(pok.value) && pok.value !== "") {
       k.push(x.value)
       kk.push(x.value)
-      document.getElementById("panjangarray").innerHTML = "panjang array :" + k.length
-    celar()
-    console.log(`data atas  :` + k.length)
-    console.log(`data bawah :` + kk.length)
-  }
- else {
- 
+      mm.push(pok.value)
+
+      document.getElementById("panjangarray").innerHTML = "panjang array :" + kk.length
+      celar()
+      console.log(`data atas  :` + k.length)
+      console.log(`data bawah :` + kk.length)
+      console.log(`data bawah :` + mm.length)
     }
+    else {
+      alert("ID kosong Kont")
+}
+  }
+    else{
+      alert("Nama kosong kont")
+    }
+    document.getElementById("updatesection").style.display = "none"
+    document.getElementById("tampilsimpen").style.display = "block"
   }
 
+function validasiangka(){
+  let pok = document.getElementById("inputID")
+  let kop = pok.value;
+  pok.value = kop.replace(/\D/g,'')
+}
   function celar() {
     x.value = "";
+    pok.value = ""
   }
 
   function tampilarrayf() {
-    document.getElementById("anjg").innerHTML = "Data : " + k.join(",")
-   
+    // let rows = 2
+    tabelco = ""
+    // tabelco +="<table border=2>"
+    // tabelco += "<tr>"
+    // tabelco += "<th>" + "data" + "</th>"
+    // tabelco += "<th>" + "Panjang Array" + "</th>"
+    // tabelco += "</tr>" 
+    for (let i = 0; i < kk.length; i++) {
+      tabelco += "<tr>"
+      tabelco += "<td>" + mm[i] + "</td>"
+      tabelco += "<td>" + kk[i] + "</td>"
+      tabelco += "<td>" + kk.length + "</td>"
+      tabelco += "<td style=width:0%>" +  "<button id=updatedata onclick=updatedatas()> Update </button>" + "</td>"
+      tabelco += "<td style=width:0%>" + "<button id=deletedata onclick=deletedatas(" + i + ")> Delete </button>" + "</td>"
+      tabelco += "</tr>"
+     
+    }
+    // tabelco += "</table>"
+    document.getElementById("tabelco").innerHTML = ("<table> <tr> <th> ID </th> <th> data </th> <th> Panjang Array </th> <th colspan=2> Edit : </th> </tr> " + tabelco + " </table>")
+    document.getElementById("panjangarray").innerHTML = "panjang array :" + kk.length
+
+
   }
 
-  function hapus() {
-    anjg.innerHTML = ""
+  function hapussemua(index) {
+    mm.splice(index)
+ kk.splice(index)
+  tampilarrayf()
   }
 
-  function hapussemua(params) {
-    k.length = 0
-    anjg.innerHTML = ""
-    document.getElementById("panjangarray").innerHTML = "panjang array :" + k.length
-  }
-
-function lihatdatahapus(){
-  let rows = 2
-
-  // tabelco +="<table border=2>"
-  // tabelco += "<tr>"
-  // tabelco += "<th>" + "data" + "</th>"
-  // tabelco += "<th>" + "Panjang Array" + "</th>"
-  // tabelco += "</tr>" 
-for (let i = 0; i < kk.length; i++) {
-  tabelco += "<tr>"
-  tabelco += "<td>" + kk[i] + "</td>"
-  tabelco += "<td>" + kk.length + "</td>"
-
-  tabelco += "</tr>" 
+ 
+function deletedatas(index) {
+  mm.splice(index,1)
+ kk.splice(index,1)
+  tampilarrayf()
 }
-// tabelco += "</table>"
-document.getElementById("tabelco").innerHTML = ("<table> <tr> <th> data </th> <th> Panjang Array </th> </tr> " +tabelco +" </table>")
-  dthps.innerHTML = "Data :" + kk.join(",")
 
-  PDH.innerHTML = "Panjang Array yang sudah di hapus : " + kk.length
+function updatedatas(index){
+  
+  document.getElementById("x").value= kk[index]
+  document.getElementById("pok").value = mm[index]
+  document.getElementById("updateindex").value = index
+  document.getElementById("updatesection").style.display = "block"
+
 }
 
-
-
-
+tampilarrayf();
 
 
   function jett() {
